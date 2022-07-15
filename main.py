@@ -3,10 +3,10 @@ from flask_socketio import SocketIO, emit, send, join_room, leave_room, close_ro
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/*": {"origins": "*"}})
 app.config['SECRET_KEY'] = 'secret!'
 app.config['CORS_HEADERS'] = 'Content-Type'
-socketio = SocketIO(app, cors_allowed_origins=('http://localhost:3000', '*'))
+socketio = SocketIO(app, cors_allowed_origins=['http://127.0.0.1:3000'])
 
 rooms = dict()
 
