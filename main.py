@@ -1,10 +1,12 @@
 from flask import Flask, render_template, request
 from flask_socketio import SocketIO, emit, send, join_room, leave_room, close_room
-
+from flask_cors import CORS
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!'
+app.config['CORS_HEADERS'] = 'Content-Type'
 socketio = SocketIO(app, cors_allowed_origins='*')
+CORS(app)
 
 rooms = dict()
 
