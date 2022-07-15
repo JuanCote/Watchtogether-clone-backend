@@ -10,6 +10,11 @@ socketio = SocketIO(app, cors_allowed_origins='*')
 rooms = dict()
 
 
+@app.route('/test')
+def test():
+    return {'letssgo': 'asasasas'}
+
+
 @socketio.on('disconnect')
 def disconnect():
     for room in rooms:
