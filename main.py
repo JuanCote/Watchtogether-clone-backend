@@ -121,4 +121,4 @@ def close_room(data):
 
 
 if __name__ == "__main__":
-    socketio.run(app, port=443)
+    socketio.run(app)
