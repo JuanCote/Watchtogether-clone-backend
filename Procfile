@@ -1,1 +1,1 @@
-web: eventlet main:app
+web: gunicorn main:app
