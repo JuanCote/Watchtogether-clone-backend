@@ -120,5 +120,4 @@ def close_room(data):
     send(response)
 
 
-if __name__ == '__main__':
-    socketio.run(app)
+socketio.run(app)
