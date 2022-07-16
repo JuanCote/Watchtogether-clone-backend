@@ -12,7 +12,7 @@ rooms = dict()
 
 @app.route('/test')
 def test():
-    return {'letssgo': 'asasasasa'}
+    return {'letssgo': 'asasasa'}
 
 
 @socketio.on('disconnect')
