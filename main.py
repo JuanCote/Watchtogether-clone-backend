@@ -1,9 +1,9 @@
 from flask import Flask, render_template, request
 from flask_socketio import SocketIO, emit, send, join_room, leave_room, close_room
-from flask_cors import CORS
+
 
 app = Flask(__name__)
-CORS(app)
+
 app.config['SECRET_KEY'] = 'secret!'
 socketio = SocketIO(app, cors_allowed_origins=[])
 
