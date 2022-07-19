@@ -32,16 +32,16 @@ def disconnect():
 def join_rooms(data):
     room = data['room']
     username = data['username']
+    avatar = data['avatar']
     join_room(room)
 
     try:
-        rooms[room].update({request.sid: username})
+        rooms[room].update({request.sid: (username, avatar)})
     except KeyError:
-        update = {room: {request.sid: username}}
+        update = {room: {request.sid: (username, avatar)}}
         rooms.update(update)
 
     users = [user for key, user in rooms[room].items()]
-
     response = {
         'resultCode': 0,
         'username': username,
@@ -54,7 +54,6 @@ def join_rooms(data):
 # client disconnect
 @socketio.on('client_disconnected')
 def client_disconnected(data):
-    print(data['username'], data['room'])
     username = data['username']
     room = data['room']
     leave_room(room)
