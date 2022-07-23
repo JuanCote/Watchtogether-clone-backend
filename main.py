@@ -36,9 +36,9 @@ def join_rooms(data):
     join_room(room)
 
     try:
-        rooms[room].update({request.sid: (username, avatar)})
+        rooms[room].update({request.sid: [username, avatar]})
     except KeyError:
-        update = {room: {request.sid: (username, avatar)}}
+        update = {room: {request.sid: [username, avatar]}}
         rooms.update(update)
 
     users = [user for key, user in rooms[room].items()]
@@ -49,6 +49,17 @@ def join_rooms(data):
         'room': room,
     }
     emit('join_room', response, to=room)
+
+
+@socketio.on('change_username')
+def change_username(data):
+    new_username = data['new_username']
+    room = data['room']
+
+    rooms[room][request.sid][0] = new_username
+    users = [user for key, user in rooms[room].items()]
+
+    emit('new_list', users, to=room)
 
 
 # client disconnect
