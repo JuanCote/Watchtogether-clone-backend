@@ -12,6 +12,7 @@ rooms = dict()
 
 @app.route('/test')
 def test():
+    print(id(rooms))
     return {'letssgo': 'asasasa'}
 
 
