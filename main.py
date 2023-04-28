@@ -131,5 +131,5 @@ def close_room(data):
     send(response)
 
 
-# if __name__ == "__main__":
-#     socketio.run(app, port=433, allow_unsafe_werkzeug=True)
+if __name__ == "__main__":
+    socketio.run(app)
