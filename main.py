@@ -5,7 +5,7 @@ from flask_socketio import SocketIO, emit, send, join_room, leave_room, close_ro
 app = Flask(__name__)
 
 app.config['SECRET_KEY'] = 'secret!'
-socketio = SocketIO(app, cors_allowed_origins=[])
+socketio = SocketIO(app, cors_allowed_origins="*")
 
 rooms = dict()
 
@@ -132,4 +132,4 @@ def close_room(data):
 
 
 if __name__ == "__main__":
-    socketio.run(app, port=433)
+    socketio.run(app)
