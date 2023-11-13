@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/.idea/backend.iml" filepath="$PROJECT_DIR$/.idea/backend.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/.idea/watchtogether(back).iml" filepath="$PROJECT_DIR$/.idea/watchtogether(back).iml" />
+>>>>>>> 413246860344eab3f26f395c0bc215e3ae5b4bc5
     </modules>
   </component>
 </project>
